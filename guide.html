@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Guide Page</title>
+  <link rel="stylesheet" href="css/guide.css">
+</head>
+<body>
+
+  <div class="logo-circle">
+    <img src="img/majestylogo.png" alt="Logo">
+  </div>
+
+  <button class="dropdown-button" onclick="toggleBox('box1')">Netflix</button>
+  <div class="dropdown-content" id="box1">
+    <p>Perbedaan Netflix</p>
+    <p class="teks-panduan">1 PROFIL 1 USER</p>
+    <ul class="list-panduan">
+      <li>1 profile di isi oleh 1 orang, jadi dalam 1 akun ada 5 orang tapi beda cust tiap profile nya. ini jarang screen limit beda kayak 1p2u, karena yang akses cuman 5 orang, tapi bukan berarti gabisa screen limit karena screenlimit netflix adalah 4 device</li>
+    </ul>
+    <p class="teks-panduan">1 PROFIL 2 USER</p>
+    <ul class="list-panduan">
+      <li>profile di isi 2 orang, jadi dalam 1 akun di netflix ada 10 cust yang berbeda makanya netflix 1p2u ini sering screenlimit dan kurang enak di gunain kalo kamu tipe orang yg nonton netflix 24/7</li>
+    </ul>
+    <p class="teks-panduan">Semi Private</p>
+    <ul class="list-panduan">
+      <li>1 profil isi 1 orang (bisa dilogin 2 device)</li>
+    </ul>
+    <p class="teks-panduan">Private</p>
+    <ul class="list-panduan">dapat 1 akun berisi 5 profil</ul>
+    <ul class="list-panduan">bisa ganti password & setting profil + pin</ul>
+    <ul class="list-panduan">dapet akses household</ul>
+    <ul class="list-panduan">akun strong</ul>
+    <ul class="list-panduan">fast fixing (0-3 day)</ul>
+  </div>
+
+  <button class="dropdown-button" onclick="toggleBox('box2')">Spotify</button>
+  <div class="dropdown-content" id="box2">
+    <p>Spotify Indplan & Famplan</p>
+    <p class="teks-panduan">Family Plan (FAMPLAN)</p>
+    <ul class="list-panduan">join ke family tetapi tetap memerlukan email pass untuk di premiumin</ul>
+    <ul class="list-panduan">famplan max 2x premium dalam setahun, lebih dari itu jika tetap ingin premium di akun yang sama wajib replace akun </ul>
+    <ul class="list-panduan">kalau perpanjang / replace akun followers, following bakal hilang tetapi playlist dan like song tetap ada</ul>
+    <p class="teks-panduan">Individual Plan (INDPLAN)</p>
+    <ul class="list-panduan">premium sistem login akun jadi perlu email & pass</ul>
+    <ul class="list-panduan">setelah premium wajib ganti email/pass </ul>
+    <ul class="list-panduan">Bisa premium / perpanjang berkali-kali tanpa replace akun</ul>
+    <ul class="list-panduan">perpanjang followers, following, playlist, dan like song tidak akan hilang</ul>
+    <ul class="list-panduan">ada kemungkinan akun bisa ke disable</ul>
+  </div>
+
+  <button class="dropdown-button" onclick="toggleBox('box3')">Disney</button>
+  <div class="dropdown-content" id="box3">
+    <p>Disney Basic & Premium</p>
+    <p class="teks-panduan">Basic</p>
+    <ul class="list-panduan">Kualitas Video Full HD (1080p)</ul>
+    <ul class="list-panduan">Max Login Hingga 3 Device</ul>
+    <ul class="list-panduan">Limit Screen 1 Device</ul>
+    <ul class="list-panduan">Bisa Membuat Hingga 7 Profil</ul>
+    <p class="teks-panduan">Premium</p>
+    <ul class="list-panduan">Kualitas Video Hingga 4K Ultra (2160p)</ul>
+    <ul class="list-panduan">Max Login Hingga 10 Device</ul>
+    <ul class="list-panduan">Limit Screen 3 Device</ul>
+    <ul class="list-panduan">Bisa Membuat Hingga 10 Profil</ul>
+  </div>
+
+<script>
+function toggleBox(id) {
+  const target = document.getElementById(id);
+
+  const isActive = target.classList.contains('active');
+
+  // Tutup semua box dulu
+  document.querySelectorAll('.dropdown-content').forEach(box => {
+    box.style.maxHeight = null;
+    box.classList.remove('active');
+  });
+
+  // Kalau sebelumnya tidak aktif, buka yang dipilih
+  if (!isActive) {
+    target.classList.add('active');
+    target.style.maxHeight = target.scrollHeight + 'px';
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Produk</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/detail.css">
+  
+    <style>
+  a,
+  button {
+    outline: none;
+    box-shadow: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="index.html" class="back"><i class="fas fa-arrow-left"></i> Kembali</a>
+      <h1 class="store-title">Majesty<span>Market</span></h1>
+    </header>
+
+    <div class="card-box">
+      <div class="produk-info">
+        <img src="img/default.png" id="produk-img" alt="Logo Produk">
+        <h2 id="produk-nama">Nama Produk</h2>
+        <p class="subtext">Deskripsi produk akan ditampilkan di sini.</p>
+      </div>
+
+      <div class="fitur">
+        <h3>| Keuntungan Premium</h3>
+        <ul id="fitur-list">
+          <!-- Fitur akan dimasukkan lewat JS -->
+        </ul>
+      </div>
+
+      <div class="paket-box">
+        <label for="paket">Durasi Premium</label>
+        <select id="paket">
+          <!-- Opsi paket diisi via JS -->
+        </select>
+
+        <div class="harga">
+          <p>Total Harga:</p>
+          <h2 id="total">Rp 0</h2>
+        </div>
+
+        <a id="beliBtn" class="wa-btn" target="_blank">
+          <i class="fab fa-whatsapp"></i> Pesan Sekarang
+        </a>
+      </div>
+    </div>
+          <hr class="garis-aqua">
+        
+  <div class="menu-kiri">
+  <p class="judul-menu">Navigasi</p>
+  <a href="#produk" class="link-menu">Semua Produk</a>
+  <a href="#" class="link-menu" id="paymentBtn">Payment</a>
+  <a href="#" class="link-menu" id="guideBtn">Guide</a>
+ <a href="#" class="link-menu" id="hubungiBtn">Hubungi Kami</a>
+
+<!-- Popup -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-content">
+    <p>Maaf, fitur ini sedang dalam masa perkembangan kami akan melakukan update untuk fitur ini secepatnya</p>
+    <button class="close-btn" id="tutupPopupBtn">Tutup</button>
+  </div>
+</div>
+</div>
+
+<div class="sosial-media">
+  <a href="https://instagram.com/majestyy.idd" target="_blank" class="sosmed-icon">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://wa.me/6285780568259" target="_blank" class="sosmed-icon">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://discord.gg/XbvNxqX5Km" target="_blank" class="sosmed-icon">
+    <i class="fab fa-discord"></i>
+  </a>
+</div>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Majesty Market. All Right Reserved.</p>
+  </footer>
+  <script src="js/detail.js"></script>
+  <script>
+// Cegah klik kanan
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+
+// Cegah Ctrl+U, Ctrl+C, Ctrl+S, Ctrl+Shift+I, dll
+document.addEventListener('keydown', function(e) {
+  if (
+    (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S' || e.key === 'c' || e.key === 'C')) ||
+    (e.key === 'F12') ||
+    (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i'))
+  ) {
+    e.preventDefault();
+  }
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hubungiBtn = document.getElementById("hubungiBtn");
+  const popup = document.getElementById("popup");
+  const tutupBtn = document.getElementById("tutupPopupBtn");
+
+  hubungiBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    popup.classList.add("active");
+  });
+
+  tutupBtn.addEventListener("click", function () {
+    popup.classList.remove("active");
+  });
+
+  // Klik di luar kotak menutup popup
+  popup.addEventListener("click", function(e) {
+    if (e.target === popup) {
+      popup.classList.remove("active");
+    }
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hubungiBtn = document.getElementById("paymentBtn");
+  const popup = document.getElementById("popup");
+  const tutupBtn = document.getElementById("tutupPopupBtn");
+
+  hubungiBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    popup.classList.add("active");
+  });
+
+  tutupBtn.addEventListener("click", function () {
+    popup.classList.remove("active");
+  });
+
+  // Klik di luar kotak menutup popup
+  popup.addEventListener("click", function(e) {
+    if (e.target === popup) {
+      popup.classList.remove("active");
+    }
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hubungiBtn = document.getElementById("guideBtn");
+  const popup = document.getElementById("popup");
+  const tutupBtn = document.getElementById("tutupPopupBtn");
+
+  hubungiBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    popup.classList.add("active");
+  });
+
+  tutupBtn.addEventListener("click", function () {
+    popup.classList.remove("active");
+  });
+
+  // Klik di luar kotak menutup popup
+  popup.addEventListener("click", function(e) {
+    if (e.target === popup) {
+      popup.classList.remove("active");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
